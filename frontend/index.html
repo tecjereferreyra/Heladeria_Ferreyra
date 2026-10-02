@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Heladería El Iglú</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <header class="encabezado">
+        <h1>Heladería El Iglú</h1>
+        <p>Pedidos por encargo</p>
+    </header>
+
+    <main class="principal">
+        <!-- ================= Armar pedido ================= -->
+        <section class="seccion ancha">
+            <h2>Armar pedido</h2>
+
+            <h3 class="subtitulo">1. Elegí los sabores (hasta 3)</h3>
+            <div id="grillaSabores" class="grilla-sabores">
+                Cargando sabores...
+            </div>
+
+            <h3 class="subtitulo">2. Elegí el tamaño</h3>
+            <div id="selectorTamanio" class="selector-tamanio">
+                <label><input type="radio" name="tamanio" value="Cuarto" checked> Cuarto (¼ kg)</label>
+                <label><input type="radio" name="tamanio" value="Medio"> Medio (½ kg)</label>
+                <label><input type="radio" name="tamanio" value="Kilo"> Kilo (1 kg)</label>
+            </div>
+
+            <h3 class="subtitulo">3. Tu pedido</h3>
+            <div id="resumen" class="resumen"></div>
+
+            <form id="formPedido" class="form-final">
+                <input type="text" id="cliente" maxlength="80"
+                    placeholder="Nombre de quien retira" required>
+                <button type="submit" class="btn btn-principal">Encargar</button>
+            </form>
+
+            <p id="mensajeForm" class="mensaje"></p>
+        </section>
+
+        <!-- ================= Pedidos ================= -->
+        <section class="seccion ancha">
+            <h2>Pedidos del día</h2>
+            <p id="mensajeLista" class="mensaje"></p>
+
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Cliente</th>
+                        <th>Tamaño</th>
+                        <th>Sabores</th>
+                        <th>Precio</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoPedidos">
+                    <tr><td colspan="7">Cargando pedidos...</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="pie">
+        Programación II · Clase 13 · Instituto Superior Villa del Rosario · 2026
+    </footer>
+
+    <!-- ============================================================
+         EL ORDEN IMPORTA: primero los componentes, después app.js
+         (app.js los usa). En la Clase 14 este orden manual
+         desaparece con los ES Modules (import/export).
+         ============================================================ -->
+    <script src="componentes/tarjetaSabor.js"></script>
+    <script src="componentes/filaPedido.js"></script>
+    <script src="componentes/resumenPedido.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
