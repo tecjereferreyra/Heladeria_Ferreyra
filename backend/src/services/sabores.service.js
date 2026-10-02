@@ -5,3 +5,5 @@ async function listarSabores() {
   const resultado = await pool.request().execute("usp_ListarSabores");
   return resultado.recordset;
 }
+
+module.exports = { listarSabores };
