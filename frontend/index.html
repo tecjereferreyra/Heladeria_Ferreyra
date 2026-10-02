@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+   <meta name="description" content="Heladería El Iglú - Pedidos por encargo">
+   <meta name="keywords" content="heladería, helado, pedidos, sabores, encargo">
+   <meta name="author" content="Jeremías Ferreyra">
+   <meta name="robots" content="index, follow">
+   <meta name="theme-color" content="#ffcc00">
     <title>Heladería El Iglú</title>
     <link rel="stylesheet" href="Style.css">
 </head>
@@ -67,14 +71,15 @@
     </main>
 
     <footer class="pie">
-        Programación II · Clase 13 · Instituto Superior Villa del Rosario · 2026
+        <div class="redes">
+            <a href="https://facebook.com/heladeriaeliglu" target="_blank">Facebook</a>
+            <a href="https://instagram.com/heladeriaeliglu" target="_blank">Instagram</a>
+            <a href="https://twitter.com/heladeriaeliglu" target="_blank">Twitter</a>
+        </div>
+        <p>Programación II / 2026 / Jeremías Ferreyra</p>
     </footer>
 
-    <!-- ============================================================
-         EL ORDEN IMPORTA: primero los componentes, después app.js
-         (app.js los usa). En la Clase 14 este orden manual
-         desaparece con los ES Modules (import/export).
-         ============================================================ -->
+
     <script src="componentes/tarjetaSabor.js"></script>
     <script src="componentes/filaPedido.js"></script>
     <script src="componentes/resumenPedido.js"></script>
