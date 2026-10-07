@@ -28,7 +28,7 @@ async function crearPedido(req, res) {
   const idPedido = await pedidosService.crear({
     cliente: cliente.trim(),
     tamanio: tamanio.trim(),
-    sabores: sabores.map(sabor => sabor.trim())
+    sabores: sabores.map(sabor => String(sabor).trim())
   });
 
   res.status(201).json({ idPedido, mensaje: `Pedido N° ${idPedido} registrado.` });

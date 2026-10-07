@@ -9,14 +9,13 @@ async function listarPedidos() {
 
 async function crear({ cliente, tamanio, sabores }) {
   const pool = await getConnection();
-  const fechaActual = new Date(); // Obtiene la fecha y hora actual
+  const fechaActual = new Date();
 
   const resultado = await pool.request()
     .input("Cliente", sql.NVarChar(80), cliente)
     .input("Tamanio", sql.NVarChar(10), tamanio)
     .input("Sabores", sql.NVarChar(50), sabores.join(", "))
-    .input("Fecha", sql.DateTime, fechaActual)
-    .input("Estado", sql.NVarChar(20), "Encargado") // <--- Agregamos el estado inicial por defecto
+    .input("Estado", sql.NVarChar(20), "Pendiente")
     .output("IdPedido", sql.Int)
     .execute("usp_CrearPedido");
 
